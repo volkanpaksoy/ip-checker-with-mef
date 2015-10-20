@@ -13,8 +13,8 @@ namespace IPCheckerWithMEF.Lab
     {
         private CompositionContainer _container;
 
-        [ImportMany(typeof(IIpChecker))]
-        public List<IIpChecker> IpCheckerList;
+        [ImportMany]
+        public List<Lazy<IIpChecker, IPluginInfo>> Plugins { get; set; }
 
         public MainApplication(string pluginFolder)
         {
@@ -28,7 +28,7 @@ namespace IPCheckerWithMEF.Lab
         {
             try
             {
-                this._container.ComposeParts(this);
+                _container.ComposeParts(this);
             }
             catch (CompositionException compositionException)
             {

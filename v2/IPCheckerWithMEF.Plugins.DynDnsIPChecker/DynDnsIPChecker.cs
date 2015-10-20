@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 namespace IPCheckerWithMEF.Plugins.DynDnsIPChecker
 {
     [Export(typeof(IIpChecker))]
+    [ExportMetadata("DisplayName", "DynDns IP Checker")]
+    [ExportMetadata("Description", "Uses free service from dyndns.org")]
+    [ExportMetadata("Version", "1.2")]
     public class DynDnsIPChecker : IIpChecker
     {
         public string GetExternalIp()

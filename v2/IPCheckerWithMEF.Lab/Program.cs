@@ -19,13 +19,16 @@ namespace IPCheckerWithMEF.Lab
 
             var app = new MainApplication(pluginFolder);
 
-            Console.WriteLine($"{app.IpCheckerList.Count} plugin(s) loaded..");
-            Console.WriteLine("Executing all plugins...");
+            Console.WriteLine($"{app.Plugins.Count} plugin(s) loaded..");
+            Console.WriteLine("Displaying plugin info...");
+            Console.WriteLine();
 
-            foreach (var ipChecker in app.IpCheckerList)
+            foreach (var ipChecker in app.Plugins)
             {
-                Console.WriteLine();
-                Console.WriteLine(ipChecker.GetExternalIp());
+                Console.WriteLine($"Name: {ipChecker.Metadata.DisplayName}");
+                Console.WriteLine($"Description: {ipChecker.Metadata.Description}" );
+                Console.WriteLine($"Version: {ipChecker.Metadata.Version}");
+                Console.WriteLine("----------------------------------------");
             }
 
         }
