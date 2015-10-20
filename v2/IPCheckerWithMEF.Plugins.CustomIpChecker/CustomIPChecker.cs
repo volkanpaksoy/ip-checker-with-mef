@@ -12,7 +12,7 @@ namespace IPCheckerWithMEF.Plugins.CustomIpChecker
 {
     [Export(typeof(IIpChecker))]
     [ExportMetadata("DisplayName", "Custom IP Checker")]
-    [ExportMetadata("Description", "Uses homebrew service developed with Node.js nad hosted on Heroku")]
+    [ExportMetadata("Description", "Uses homebrew service developed with Node.js and hosted on Heroku")]
     [ExportMetadata("Version", "2.1")]
     public class CustomIpChecker : IIpChecker
     {

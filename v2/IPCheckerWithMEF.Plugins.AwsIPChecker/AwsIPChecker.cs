@@ -12,7 +12,7 @@ namespace IPCheckerWithMEF.Plugins.AwsIPChecker
     [Export(typeof(IIpChecker))]
     [ExportMetadata("DisplayName", "AWS IP Checker")]
     [ExportMetadata("Description", "Uses AWS's service to get the external IP address")]
-    [ExportMetadata("Version", "1.0")]
+    [ExportMetadata("Version", "1.1")]
     public class AwsIPChecker : IIpChecker
     {
         public string GetExternalIp()

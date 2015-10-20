@@ -12,14 +12,15 @@ namespace IPCheckerWithMEF.Lab
     public class MainApplication
     {
         private CompositionContainer _container;
+        private DirectoryCatalog _catalog;
 
-        [ImportMany]
+        [ImportMany(AllowRecomposition = true)]
         public List<Lazy<IIpChecker, IPluginInfo>> Plugins { get; set; }
 
         public MainApplication(string pluginFolder)
         {
-            var catalog = new DirectoryCatalog(pluginFolder);
-            _container = new CompositionContainer(catalog);
+            _catalog = new DirectoryCatalog(pluginFolder);
+            _container = new CompositionContainer(_catalog);
 
             LoadPlugins();
         }
@@ -28,7 +29,9 @@ namespace IPCheckerWithMEF.Lab
         {
             try
             {
-                _container.ComposeParts(this);
+                _catalog.Refresh();
+                // _container.ComposeParts(this);
+                _container.SatisfyImportsOnce(this);
             }
             catch (CompositionException compositionException)
             {
