@@ -5,6 +5,7 @@ using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace IPCheckerWithMEF.Lab
@@ -16,7 +17,6 @@ namespace IPCheckerWithMEF.Lab
             Console.WriteLine("Starting the main application");
 
             string pluginFolder = @"..\..\..\Plugins\";
-
             var app = new MainApplication(pluginFolder);
 
             Console.WriteLine($"{app.IpCheckerList.Count} plugin(s) loaded..");
@@ -24,12 +24,13 @@ namespace IPCheckerWithMEF.Lab
 
             foreach (var ipChecker in app.IpCheckerList)
             {
-                Console.WriteLine();
-                Console.WriteLine(ipChecker.GetExternalIp());
+                Console.WriteLine(ObfuscateIP(ipChecker.GetExternalIp()));
             }
-
         }
 
-
+        private static string ObfuscateIP(string actualIp)
+        {
+            return Regex.Replace(actualIp, "[0-9]", "*");
+        }
     }
 }
