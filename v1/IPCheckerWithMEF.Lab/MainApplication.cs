@@ -14,7 +14,7 @@ namespace IPCheckerWithMEF.Lab
         private CompositionContainer _container;
 
         [ImportMany(typeof(IIpChecker))]
-        public List<IIpChecker> IpCheckerList;
+        public List<IIpChecker> IpCheckerList { get; set; }
 
         public MainApplication(string pluginFolder)
         {
