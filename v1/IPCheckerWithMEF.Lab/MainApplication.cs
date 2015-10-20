@@ -28,7 +28,7 @@ namespace IPCheckerWithMEF.Lab
         {
             try
             {
-                this._container.ComposeParts(this);
+                _container.ComposeParts(this);
             }
             catch (CompositionException compositionException)
             {
