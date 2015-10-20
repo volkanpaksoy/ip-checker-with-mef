@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPCheckerWithMEF.Contract", "IPCheckerWithMEF.Contract\IPCheckerWithMEF.Contract.csproj", "{314414A8-A8CA-4422-8BB7-47AF71FA78A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPCheckerWithMEF.Lab", "IPCheckerWithMEF.Lab\IPCheckerWithMEF.Lab.csproj", "{E5DA0FE0-D89F-48E9-9BD7-834601EAE4C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{C81F73B5-D758-498C-AAD4-F04D15410CF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPCheckerWithMEF.Plugins.AwsIPChecker", "IPCheckerWithMEF.Plugins.AwsIPChecker\IPCheckerWithMEF.Plugins.AwsIPChecker.csproj", "{B2FA42C8-7499-4598-AB01-0F55337525FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPCheckerWithMEF.Plugins.CustomIPChecker", "IPCheckerWithMEF.Plugins.CustomIpChecker\IPCheckerWithMEF.Plugins.CustomIPChecker.csproj", "{AA6F507A-90CC-421C-A2CC-249059126E6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPCheckerWithMEF.Plugins.DynDnsIPChecker", "IPCheckerWithMEF.Plugins.DynDnsIPChecker\IPCheckerWithMEF.Plugins.DynDnsIPChecker.csproj", "{CDD5AC7E-F616-43C4-928E-2EBDFE74AD6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{314414A8-A8CA-4422-8BB7-47AF71FA78A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{314414A8-A8CA-4422-8BB7-47AF71FA78A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{314414A8-A8CA-4422-8BB7-47AF71FA78A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{314414A8-A8CA-4422-8BB7-47AF71FA78A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5DA0FE0-D89F-48E9-9BD7-834601EAE4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DA0FE0-D89F-48E9-9BD7-834601EAE4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DA0FE0-D89F-48E9-9BD7-834601EAE4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DA0FE0-D89F-48E9-9BD7-834601EAE4C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2FA42C8-7499-4598-AB01-0F55337525FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2FA42C8-7499-4598-AB01-0F55337525FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2FA42C8-7499-4598-AB01-0F55337525FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2FA42C8-7499-4598-AB01-0F55337525FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6F507A-90CC-421C-A2CC-249059126E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6F507A-90CC-421C-A2CC-249059126E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6F507A-90CC-421C-A2CC-249059126E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6F507A-90CC-421C-A2CC-249059126E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD5AC7E-F616-43C4-928E-2EBDFE74AD6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD5AC7E-F616-43C4-928E-2EBDFE74AD6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD5AC7E-F616-43C4-928E-2EBDFE74AD6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD5AC7E-F616-43C4-928E-2EBDFE74AD6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2FA42C8-7499-4598-AB01-0F55337525FA} = {C81F73B5-D758-498C-AAD4-F04D15410CF8}
+		{AA6F507A-90CC-421C-A2CC-249059126E6A} = {C81F73B5-D758-498C-AAD4-F04D15410CF8}
+		{CDD5AC7E-F616-43C4-928E-2EBDFE74AD6D} = {C81F73B5-D758-498C-AAD4-F04D15410CF8}
+	EndGlobalSection
+EndGlobal
