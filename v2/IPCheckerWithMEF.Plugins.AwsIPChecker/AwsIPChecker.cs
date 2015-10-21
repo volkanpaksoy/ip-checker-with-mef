@@ -17,6 +17,9 @@ namespace IPCheckerWithMEF.Plugins.AwsIPChecker
     {
         public string GetExternalIp()
         {
+            System.Threading.Thread.Sleep(1000 * 120);
+
+
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://checkip.amazonaws.com/");

@@ -20,16 +20,21 @@ namespace IPCheckerWithMEF.Lab
         {
             Console.WriteLine("Starting the main application");
 
-            // string pluginFolder = @"..\..\..\Plugins\";
-
-            _pluginWatcher = new FileSystemWatcher();
-            _pluginWatcher.Path = _pluginFolder;
-            _pluginWatcher.Created += PluginWatcher_Created;
+            _pluginWatcher = new FileSystemWatcher(_pluginFolder);
+            _pluginWatcher.Created += PluginWatcher_FolderUpdated;
+            _pluginWatcher.Deleted += PluginWatcher_FolderUpdated;
             _pluginWatcher.EnableRaisingEvents = true;
 
             _app = new MainApplication(_pluginFolder);
 
             PrintPluginInfo();
+
+            
+            foreach (var ipChecker in _app.Plugins)
+            {
+                Console.WriteLine(ipChecker.Value.GetExternalIp());
+            }
+           
 
             Console.ReadLine();
         }
@@ -46,11 +51,15 @@ namespace IPCheckerWithMEF.Lab
                 Console.WriteLine($"Name: {ipChecker.Metadata.DisplayName}");
                 Console.WriteLine($"Description: {ipChecker.Metadata.Description}");
                 Console.WriteLine($"Version: {ipChecker.Metadata.Version}");
+
+                Console.WriteLine(ipChecker.Value.GetExternalIp());
             }
         }
 
-        private static void PluginWatcher_Created(object sender, FileSystemEventArgs e)
+        private static void PluginWatcher_FolderUpdated(object sender, FileSystemEventArgs e)
         {
+            Console.WriteLine();
+            Console.WriteLine("====================================");
             Console.WriteLine("Folder changed. Reloading plugins...");
             Console.WriteLine();
             
