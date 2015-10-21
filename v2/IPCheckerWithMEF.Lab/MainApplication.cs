@@ -30,8 +30,7 @@ namespace IPCheckerWithMEF.Lab
             try
             {
                 _catalog.Refresh();
-                // _container.ComposeParts(this);
-                _container.SatisfyImportsOnce(this);
+                _container.ComposeParts(this);
             }
             catch (CompositionException compositionException)
             {
